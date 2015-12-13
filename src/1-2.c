@@ -5,7 +5,9 @@ char* input = "((((()(()(((((((()))(((()((((()())(())()(((()((((((()((()(()(((()
 
 int main(int argc, char** argv) {
   int input_length = strlen(input);
+  int input_pos = 0;
   int floor = 0;
+
   for (int i = 0; i < input_length; i++) {
     switch (input[i]) {
     case '(':
@@ -15,6 +17,12 @@ int main(int argc, char** argv) {
       floor--;
       break;
     }
+    input_pos++;
+
+    if (floor == -1) {
+      printf("He enters the basement at position: %d\n", input_pos);
+      return 0;
+    }
   }
-  printf("The floor is: %d\n", floor);
+  printf("He never enters the basement!\n");
 }
