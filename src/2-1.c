@@ -21,15 +21,12 @@ int wrapping_area(const right_rect_prism* r) {
                        r->w * r->h,
                        r->h * r->l};
 
+  int total = 0;
   int smallest = side_areas[0];
-  for (int i = 1; i < 3; i++) {
+  for (int i = 0; i < 3; i++) {
     if (side_areas[i] < smallest) {
       smallest = side_areas[i];
     }
-  }
-
-  int total = 0;
-  for (int i = 0; i < 3; i++) {
     total += 2 * side_areas[i];
   }
 
