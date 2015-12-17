@@ -36,7 +36,7 @@ int main(int argc, char** argv) {
   FILE* input = fopen("2-1.txt", "r");
   if (!input) {
     perror("Error opening input file!");
-    return EXIT_FAILURE;
+    exit(EXIT_FAILURE);
   }
 
   int total_ribbon_length = 0;
